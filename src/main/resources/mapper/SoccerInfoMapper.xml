@@ -1,0 +1,37 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team2.mapper.SoccerInfoMapper">
+<select id="selectSoccerInfoList" resultType="com.team2.vo.SoccerInfoVO">
+	SELECT * FROM soccer_info
+</select>
+
+<select id="selectSoccerInfo" resultType="com.team2.vo.SoccerInfoVO">
+	SELECT * FROM soccer_info WHERE SI_NUM=#{siNum}
+</select>
+
+<insert id="insertSoccerInfo" parameterType="com.team2.vo.SoccerInfoVO">
+	INSERT INTO soccer_info(SI_NAME,SI_CNTRY,SI_BELONGS,SI_POSITION,SI_GOALS,
+	SI_ASSIST,SI_APPEARANCE,SI_FEATURE,SI_GENDER)
+	VALUES(#{siName},#{siCntry},#{siBelongs},#{siPosition},#{siGoals},
+	#{siAssist},#{siAppearance},#{siFeature},#{siGender})
+</insert>
+
+<update id="updateSoccerInfo" parameterType="com.team2.vo.SoccerInfoVO">
+	UPDATE soccer_info
+	SET SI_NAME=#{siName},
+	SI_CNTRY=#{siCntry},
+	SI_BELONGS=#{siBelongs},
+	SI_POSITION=#{siPosition},
+	SI_GOALS=#{siGoals},
+	SI_ASSIST=#{siAssist},
+	SI_APPEARANCE=#{siAppearance},
+	SI_FEATURE=#{siFeature},
+	SI_GENDER=#{siGender}
+	WHERE SI_NUM=#{siNum}
+</update>
+
+<delete id="deleteSoccerInfo" parameterType="com.team2.vo.SoccerInfoVO">
+	DELETE FROM soccer_info WHERE SI_NUM=1;
+</delete>
+</mapper>

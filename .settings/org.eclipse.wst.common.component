@@ -7,7 +7,14 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
                 
+=======
+<<<<<<< HEAD
+=======
+                
+>>>>>>> branch 'master' of https://github.com/26GGANG/team2.git
+>>>>>>> branch 'master' of https://github.com/26GGANG/team2.git
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                 
         <property name="java-output-path" value="/team2/build/classes"/>
