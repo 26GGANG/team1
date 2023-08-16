@@ -39,7 +39,7 @@ public class SingInfoServlet extends HttpServlet {
 			SingInfoVO sing=siService.getSingInfo(siNum);
 			json=gson.toJson(sing);
 		}
-		doProcess(response,json);
+		doProcess(response,json); 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
