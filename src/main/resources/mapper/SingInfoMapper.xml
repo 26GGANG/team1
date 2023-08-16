@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team2.mapper.SingInfoMapper">
+	<select id="selectSingInfoList" resultType="com.team2.vo.SingInfoVO">
+		SELECT * FROM sing_info
+	</select> 
+	
+	<select id="selectSingInfo" resultType="com.team2.vo.SingInfoVO">
+		SELECT * FROM sing_info WHERE SI_NUM=#{siNum}
+	</select>
+	
+	<insert id="insertSingInfo" parameterType="com.team2.vo.SingInfoVO">
+		INSERT INTO sing_info(SI_NAME,SI_GENRE,SI_TITLE,SI_TRANS,SI_WRITER,SI_ARTIST,SI_DESC,SI_CNT,SI_ALBUM)
+		VALUES(
+		#{siName},#{siGenre},#{siTitle},#{siTrans},
+		#{siWriter},#{siArtist},#{siDesc},#{siCnt},#{siAlbum}
+		)
+	</insert>
+	
+	<update id="updateSingInfo" parameterType="com.team2.vo.SingInfoVO">
+		UPDATE sing_info
+		SET SI_NAME=#{siName},
+		SI_GENRE=#{siGenre},
+		SI_TITLE=#{siTitle},
+		SI_TRANS=#{siTrans},
+		SI_WRITER=#{siWriter},
+		SI_ARTIST=#{siArtist},
+		SI_DESC=#{siDesc},
+		SI_CNT=#{siCnt},
+		SI_ALBUM=#{siAlbum},
+		WHERE SI_NUM=#{siNum}
+	</update>
+	
+	<delete id="deleteSingInfo" parameterType="com.team2.vo.SingInfoVO">
+		DELETE FROM sing_info WHERE SI_NUM=#{siNum}
+	</delete>
+</mapper>
