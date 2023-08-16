@@ -57,7 +57,7 @@ public class CommandParser {
 			String uri = request.getRequestURI();
 			int idx = uri.lastIndexOf("/")+1;
 			return uri.substring(idx);
-		}
+		} 
 	}
 }
 
