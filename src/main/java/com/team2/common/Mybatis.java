@@ -9,8 +9,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.team2.mapper.UserInfoMapper;
-import com.team2.vo.UserInfoVO;
+import com.team2.mapper.HumanInfoMapper;
+import com.team2.vo.HumanInfoVO;
 
 public class Mybatis {
 
@@ -30,8 +30,8 @@ public class Mybatis {
 	}
 	public static void main(String[] args) {
 		SqlSession session = ssf.openSession();
-		UserInfoMapper uiMapper = session.getMapper(UserInfoMapper.class);
-		List<UserInfoVO> userList = uiMapper.selectUserInfoList(null);
-		System.out.println(userList);
+		HumanInfoMapper hiMapper = session.getMapper(HumanInfoMapper.class);
+		HumanInfoVO human = hiMapper.selectHumanInfo(1);
+		System.out.println(human);
 	}
 }

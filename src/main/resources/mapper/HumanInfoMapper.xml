@@ -1,0 +1,37 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team2.mapper.HumanInfoMapper">
+	<select id="selectHumanInfoList" resultType="com.team2.vo.HumanInfoVO">
+		SELECT * FROM HUMAN_INFO
+	</select>
+
+	<select id="selectHumanInfo" resultType="com.team2.vo.HumanInfoVO">
+		SELECT * FROM HUMAN_INFO WHERE HI_NUM = #{hiNum}
+	</select>
+
+	<insert id="insertHumanInfo" parameterType="com.team2.vo.HumanInfoVO">
+		INSERT INTO HUMAN_INFO(HI_NAME, HI_AGE, HI_BIRTH, HI_ADDRESS,
+		HI_GENDER, HI_HEIGHT, HI_WEIGHT, HI_RELIGION, HI_CREDIT)
+		VALUES(#{hiName}, #{hiAge}, #{hiBirth}, #{hiAddress}, #{hiGender}, #{hiHeight},
+		#{hiWeight}, #{hiReligion}, #{hiCredit});
+	</insert>
+	
+	<update id="updateHumanInfo" parameterType="com.team2.vo.HumanInfoVO">
+		UPDATE HUMAN_INFO SET
+		HI_NAME=#{hiName},
+		HI_AGE=#{hiAge},
+		HI_BIRTH=#{hiBirth},
+		HI_ADDRESS=#{hiAddress},
+		HI_GENDER=#{hiGender},
+		HI_HEIGHT=#{hiHeight},
+		HI_WEIGHT=#{hiWeight},
+		HI_RELIGION=#{hiReligion},
+		HI_CREDIT=#{hiCredit}
+		WHERE HI_NUM=#{hiNum};
+	</update>
+	
+	<delete id="deleteHumanInfo" parameterType="com.team2.vo.HumanInfoVO">
+		DELETE FROM HUMAN_INFO WHERE HI_NUM=#{hiNum};
+	</delete>
+</mapper>
